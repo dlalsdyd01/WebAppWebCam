@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Address Book</h1>
+    </header>
+    <main>
+        <form action="/add" method="post" enctype="multipart/form-data">
+            <label for="name" class="label-name">Name:</label>
+            <input type="text" id="name" name="pyname" required>
+            <br><br>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="pyphone" required>
+            <br><br>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="pybirthday" required>
+            <br><br>
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="pyphoto" accept="image/*" onchange="previewPhoto()" required>
+            <br><br>
+            <img id="photoPreview" src="#" alt="Photo Preview" style="display: none; max-width: 200px; max-height: 200px;">
+            <br><br>
+            <button type="submit">Add Contact</button>
+        </form>
+    </main>
+    <script>
+        function previewPhoto() {
+            const fileInput = document.getElementById('photo');
+            const preview = document.getElementById('photoPreview');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result; // 선택한 파일의 데이터 URL을 미리보기 이미지에 설정
+                    preview.style.display = 'block'; // 이미지를 표시
+                };
+                reader.readAsDataURL(file); // 파일을 읽어 데이터 URL로 변환
+            } else {
+                preview.src = '#'; // 기본값으로 설정
+                preview.style.display = 'none'; // 이미지를 숨김
+            }
+        }
+    </script>
+</body>
+</html>
