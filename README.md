@@ -100,6 +100,6 @@ def add_contact():
 실행 화면  
 ![image](https://github.com/user-attachments/assets/bf14da67-5c7c-4ce7-8de4-45d15e3f288b)  
 
-스크린샷이 upload 파일에 저장됌.
+스크린샷이 upload 파일에 저장된 모습  
 ![image](https://github.com/user-attachments/assets/0d2466ee-81cc-4572-a34a-1d505191add7)
 
