@@ -94,6 +94,8 @@ def add_contact():
 
  return redirect('/')
 ```
+파일내용을 받아서 static/uploads 폴더에 저장하고 파일이름을 addbook.txt에 함께 저장하고 있다.  
+  
 
 실행 화면  
 ![image](https://github.com/user-attachments/assets/bf14da67-5c7c-4ce7-8de4-45d15e3f288b)  
